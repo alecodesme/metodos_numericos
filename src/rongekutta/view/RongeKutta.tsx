@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { k1, k2, k3, k4, nextRow } from "../utils/rongeKutta";
 import RongeKuttaTable from "../components/RongeKuttaTable";
 
-const H = 0.5
+const H = 0.25
 const INIT_TABLE = 0
 const INIT_TABLE_VALUE = 1
 const MIN_RANGE = 0
@@ -47,12 +47,13 @@ const RongeKuttaView = () => {
 
     return <div>
         <h2>Ronge kutta</h2>
+        <span>{numbersOnRange.toString()}</span>
         <h3>1 era iteracion</h3>
         <div>K1: {k1Value}</div>
         <div>K2: {k2Value}</div>
         <div>K3: {k3Value}</div>
         <div>K4: {k4Value}</div>
-        <div>Siguiente fila: {next}</div>
+        <div>Siguiente Wi: {next}</div>
 
         <div>Tabla ronge kutta</div>
         <RongeKuttaTable

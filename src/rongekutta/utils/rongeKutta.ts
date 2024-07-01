@@ -3,11 +3,13 @@ import { MAX_NUMBER_DECIMALS } from "./constants";
 export const toFixedIfNecessary = (value: number, numberDecimals: number) => {
     return +value.toFixed(numberDecimals);
 }
-const getFormulaResult = (ti = 0, wi = 0) => {
-    return Math.pow(Math.E, ti) + wi + 1
-}
-export const k1 = (interval: number, ti: number, wi: number) => {
 
+//Cambiar la formula aqui
+const getFormulaResult = (ti = 0, wi = 0) => {
+    return Math.pow(Math.E, ti - wi)
+}
+
+export const k1 = (interval: number, ti: number, wi: number) => {
     return toFixedIfNecessary(interval * getFormulaResult(ti, wi), MAX_NUMBER_DECIMALS)
 }
 export const k2 = (interval: number, ti: number, wi: number, k1: number) => {
